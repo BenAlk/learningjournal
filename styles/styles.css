@@ -1,0 +1,285 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*  ------ Navigation ------- */
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.container li {
+    display: inline-block;
+}
+
+.nav-btn {
+    color: black;
+    margin-left: 5vw;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/*-------- Banner --------*/
+
+.banner-img {
+    background-image: url("../images/blog-image-hero.png");
+    background-size: cover;
+    background-position: 50% 100%;
+    display: flex;
+    margin-bottom: 2em;
+    min-height: 293px;
+    width: 100%;
+}
+
+.banner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    /* height: 34vh; */
+
+}
+
+.banner-container {
+    padding: 0 1.25rem;
+    width: 100%;
+    height: 300px;
+}
+
+.banner-title,
+.banner-date,
+.banner-description {
+    color: white;
+}
+
+.banner-date,
+.banner-description {
+    font-weight: 400;
+}
+
+.banner-date {
+    font-size: 0.75rem;
+    /* font-size: 2.4vw; */
+}
+
+.banner-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.banner-description {
+    padding-bottom: 32px;
+}
+
+/*-------- Blog ----------*/
+.blog {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        grid-gap: 1rem;
+        margin: 0 auto;
+        max-width: 100%;
+        width: 100%;
+    }
+
+.blog-container {
+    margin: 0;
+    display: grid;
+    padding: 0;
+    grid-template-columns: 1.25rem 1fr 1.25rem;
+    grid-template-areas: 
+        ". image ."
+        ". date  ."
+        ". title ."
+        ". body ." ;
+}
+
+.blog-image {grid-area: image;}
+.blog-date {grid-area: date;}
+.blog-title {grid-area: title;}
+.blog-body {grid-area: body;}
+
+.blog-image{
+    align-self: center;
+    width: 100%
+}
+
+.blog-date {
+    font-size: 0.75rem;
+    margin: 0.875rem 0 0;
+    text-transform: uppercase;
+    }
+    
+.blog-title{
+    color: #141414;
+    margin: 0.56rem 0 0;
+}
+.blog-body {
+    color: #505050;
+    margin: 0.56rem 0 2.56rem 0;
+}
+
+/*------ Recent Posts -------*/
+
+.recent-posts-title {
+    text-align: center;
+    padding: 3.19rem 0 1.69rem 0;
+    margin: 0;
+}
+
+/*----- hidden -----*/
+
+.view-more {
+    text-align: center;
+    margin-top: -20px;
+    padding-bottom: 2rem;
+}
+
+.view-more-btn{
+    padding: 5px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden-medium{
+    display: none;
+}
+
+/*---- footer ------*/
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 2.3rem;
+    min-width: 300px;
+}
+
+footer p {
+    font-size: 0.75rem;
+    margin: 1px 0;
+}
+/*----- Media Queries ----- */
+
+@media (min-width: 601px){
+    .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 2rem ;
+    }
+
+    .nav-btn {
+        margin-left: 2vw;
+    }
+
+    .banner-container {
+        padding: 0 1rem 2rem;
+        height: 480px;
+    }
+
+    .blog-date {
+        margin-top: 0.875rem;
+    }
+    
+    .blog-title{
+        margin: 0.56rem 0;
+    }
+    .blog-body {
+        margin: 0.875rem 0 2.56rem 0;
+    }
+
+    .blog-container{
+        grid-template-columns: 1.2rem 1fr 1.2rem;
+    }
+}
+
+@media (min-width: 638px) {
+    .hidden-medium{
+        display: grid;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .container{
+        max-width: 1500px;
+    }
+
+    .blog {
+        justify-content: center;
+        grid-template-columns: repeat(3, minmax(256px, 500px));
+        max-width: 1500px;
+    }
+
+    .banner-container{
+        max-width: 1500px;
+        grid-column: 1 / -1;
+    }
+
+    .banner-date,
+    .banner-description {
+        font-size: 1.5rem;
+    }
+
+    .banner-title {
+        font-size: 2.5rem;
+    }
+
+    .hidden {
+        display: grid;
+    }
+
+    #view-more {
+        display: none;
+    }
+
+    .blog-date,
+    .blog-body {
+        font-size: 1.25rem;
+    }
+
+    .blog-title{
+        font-size: 2rem;;
+    }
+    footer p{
+        font-size: 1.2rem;
+    }
+
+    .site-title{
+        gap: 10px;
+        font-size: 1.5rem;
+    }
+
+    .nav-btn {
+        font-size: 1.25rem;
+    }
+
+  }

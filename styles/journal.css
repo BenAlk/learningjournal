@@ -1,0 +1,61 @@
+/*------ Body Layout ------ */
+
+.body-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.25rem;
+}
+
+.date {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    line-height: 0.93rem;
+    padding: 2rem 0 1rem 0
+}
+
+.intro-container img {
+    width: 100%;
+    padding-bottom: 2rem;
+}
+
+.intro-title,
+.intro-content,
+.blog-content{
+    margin: 0;
+}
+
+.intro-title{
+    font-size: 2rem;
+}
+
+.intro-content {
+    padding: 1rem 0 2rem 0;
+} 
+
+/*----- Media Queries ----- */
+
+@media (min-width: 601px){
+    .date,
+    .intro-title,
+    .intro-content,
+    .blog-content{
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    .date{
+        padding-top: 4.44rem;
+    }
+    .body-container img{
+        padding: 0 1.26rem 2rem ;
+    }
+} 
+
+@media (min-width: 768px) {
+    .body-container{
+        max-width: 1500px;
+        align-self: center;
+        margin: 0 auto;
+        }
+}
